@@ -92,3 +92,21 @@ No API keys or passwords are included in this package; your existing Railway Var
 ### How to upload to GitHub
 
 Open the ZIP, extract all files, and upload **the contents of the folder** into the root of your existing GitHub repository. Commit your changes, then watch Railway's Deployments screen. The project root should contain `server.js`, `package.json`, and `public/`.
+
+
+## Additional setlist enrichment tool (optional)
+
+After importing the separate 95-recording JSON file, sign in as admin and go to Tools → Import / Export → **Find missing setlists**, or open `/bulk-setlists.html` directly. The browser tool calls your own setlist.fm API proxy, matches concert dates plus venue/city, and fills only blank setlists, tours and source URLs on the 95 imported IDs. It does not touch unrelated records or replace screenshots. Run a complete backup first and keep the page open during enrichment. Some historic concert entries cannot be matched reliably and will be skipped.
+
+## V5 — Sticky Recording Details panel
+
+On desktop screens (wider than 990px), the right-hand Recording Details panel
+now stays in view as you scroll through the concert list. If the details, setlist,
+or screenshot gallery exceed the viewport height, scroll *inside* the right-hand
+panel to see them all. On narrower screens it remains in the standard layout.
+
+This is a CSS-only presentation update. The database, screenshots, admin login,
+setlist.fm API connection, and existing imported recordings are unchanged.
+To deploy, upload **all the extracted project files** from the ZIP to the root
+of your existing GitHub repository, preserving your Railway variables and `/data`
+volume. Refresh the website with Ctrl+Shift+R after deploying.

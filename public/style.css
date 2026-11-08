@@ -59,3 +59,33 @@ body{background:#09090b;color:#e9e8ed;font-family:'DM Sans',Arial,sans-serif}
 .header-separator{margin-left:0}
 @media(max-width:1000px){.site-header{gap:14px;padding-left:16px;padding-right:16px}.omega-logo{width:clamp(190px,30vw,300px)}.header-separator{display:none}}
 @media(max-width:670px){.site-header{min-height:70px;padding-top:6px;padding-bottom:6px}.omega-logo{width:clamp(160px,53vw,260px);max-height:75px}.header-actions{gap:6px}.top-logout{font-size:9px}}
+
+/* V5: Keep the selected recording visible while scrolling the concert archive.
+   On desktop, the details inspector follows page scrolling and has its own
+   scrollbar for unusually long setlists or galleries. On smaller screens it
+   returns to the normal document flow beneath the recordings list. */
+@media (min-width: 991px) {
+  .three-col > .inspector {
+    position: sticky;
+    top: 10px;
+    align-self: start;
+    height: calc(100vh - 20px);
+    max-height: calc(100vh - 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #713044 #17171b;
+  }
+  .three-col > .inspector::-webkit-scrollbar { width: 8px; }
+  .three-col > .inspector::-webkit-scrollbar-thumb { background: #713044; border-radius: 12px; }
+  .three-col > .inspector::-webkit-scrollbar-track { background: #17171b; }
+}
+@media (max-width: 990px) {
+  .three-col > .inspector {
+    position: static;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
