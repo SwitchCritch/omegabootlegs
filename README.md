@@ -1,10 +1,10 @@
-# MANSON ARCHIVE — Industrial Gothic (v1)
+# MANSON ARCHIVE — Industrial Gothic — Three-Column Redesign (v2)
 
 A full-stack, independent catalogue for Marilyn Manson live audio and video recordings. **No recordings are hosted, streamed, or made downloadable.**
 
 ## Features
 - Dark, responsive Industrial Gothic design
-- Public searchable collection, audio/video filters, year filter, statistics, individual recording pages
+- Public searchable collection, audio/video filters, year/tour/quality filters, selectable recordings with a details inspector
 - Password-protected admin login; create, edit and delete entries
 - Rich metadata: show date, venue, location, tour, format, duration, quality, recording source, resolution, size, notes
 - Multi-image screenshot upload with gallery/lightbox
@@ -49,7 +49,7 @@ Do **not** store recordings or public download links in this app. Do not commit 
 - Search requires an API key; the rest of the archive works without it.
 - Some setlists have no tour information or incomplete songs. Review the imported form before saving.
 
-## Notes and limitations for v1
+## Notes and limitations for v2
 
 - Search lookup shows the first page of matching concerts; narrower queries improve results.
 - CSV exports metadata only. A complete ZIP contains the screenshot files. JSON export includes image paths but not binary data.
@@ -64,3 +64,21 @@ Do **not** store recordings or public download links in this app. Do not commit 
 - `public/index.html` — app entrypoint
 - `public/style.css` — responsive Gothic interface
 - `public/app.js` — browser-side collection UI
+
+## Version 2 redesign — safe update instructions
+
+This is a **frontend redesign** on top of the same server endpoints and recording data model as version 1. It does **not** reset your collection or replace the screenshot storage volume. The Statistics navigation, statistics dashboard and statistics panels have been removed. The archive now uses a three-column layout with filters, a table/grid of recordings, and a details/setlist/screenshots inspector.
+
+### Before updating your existing Railway deployment
+
+1. In the existing website, log in as admin and download **Import / Export → Complete ZIP Backup**. Save a copy somewhere outside Railway.
+2. In Railway, confirm `DATA_DIR=/data` and that the existing persistent volume remains attached at `/data`. **Do not create a fresh volume or remove the original.**
+3. Push these files to the **same GitHub repository** already linked to the existing Railway service. Let Railway redeploy. Do not create a different service unless you intentionally want a separate empty archive.
+4. Confirm that your recordings and screenshot thumbnails are present. Test the admin login and setlist.fm lookup.
+5. Keep the ZIP backup as a separate recovery copy.
+
+No API keys or passwords are included in this package; your existing Railway Variables remain in Railway. If a PostgreSQL database is connected, leave `DATABASE_URL` unchanged.
+
+### How to upload to GitHub
+
+Open the ZIP, extract all files, and upload **the contents of the folder** into the root of your existing GitHub repository. Commit your changes, then watch Railway's Deployments screen. The project root should contain `server.js`, `package.json`, and `public/`.
