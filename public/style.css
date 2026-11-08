@@ -51,3 +51,11 @@ body{background:#09090b;color:#e9e8ed;font-family:'DM Sans',Arial,sans-serif}
 @media(max-width:1250px){.three-col{grid-template-columns:230px minmax(400px,1fr) 350px}.filters{padding:18px}.inspector{padding:18px}.header-tagline{display:none}}
 @media(max-width:990px){.three-col{grid-template-columns:210px minmax(0,1fr)}.inspector{grid-column:1/-1;border-top:1px solid #35353b;display:block}.inspector-section{max-width:900px}.archive-table{min-width:650px}}
 @media(max-width:670px){.site-header{height:69px;padding:0 14px;gap:12px}.brand-text{font-size:16px;letter-spacing:2px}.brand-text small{letter-spacing:3px;font-size:8px}.sigil{display:none}.header-separator{display:none}.admin-pill{font-size:9px;padding:8px}.main-nav{height:auto;flex-direction:column}.nav-items{padding-left:0;justify-content:space-around;gap:0}.nav-items button{padding:13px 5px;font-size:11px}.nav-search{margin:7px 12px 10px;max-width:none;min-height:39px}.three-col{display:flex;flex-direction:column}.filters{border-right:0;border-bottom:1px solid #35353a;padding:14px}.filters .filter-section{padding:10px 0}.filters .check-list{flex-direction:row;flex-wrap:wrap}.archive-area{padding:16px 10px}.archive-head{align-items:flex-start;flex-wrap:wrap}.archive-controls select{width:130px}.inspector{padding:17px}.inner-page{margin:20px auto;padding:0 12px}.inspector-shots{grid-template-columns:repeat(3,1fr)}.site footer{padding:18px}}
+
+/* Omega Bootlegs branded header — logo supplied by collection owner */
+.site-header{min-height:99px;height:auto;padding-top:8px;padding-bottom:8px}
+.brand-button{flex:0 0 auto;min-width:0;line-height:0}
+.omega-logo{display:block;width:clamp(210px,25vw,355px);height:auto;max-height:96px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 2px rgba(125,177,255,.22))}
+.header-separator{margin-left:0}
+@media(max-width:1000px){.site-header{gap:14px;padding-left:16px;padding-right:16px}.omega-logo{width:clamp(190px,30vw,300px)}.header-separator{display:none}}
+@media(max-width:670px){.site-header{min-height:70px;padding-top:6px;padding-bottom:6px}.omega-logo{width:clamp(160px,53vw,260px);max-height:75px}.header-actions{gap:6px}.top-logout{font-size:9px}}

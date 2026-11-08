@@ -1,3 +1,13 @@
+# Omega Bootlegs logo update (V3)
+
+This package is the complete GitHub-ready website, based on the Industrial Gothic V2 release. The site header now displays the supplied transparent **Omega Bootlegs** logo in `public/omega-bootlegs-logo.png`, with responsive sizing for desktop and mobile. No API routes, data formats, database storage, or `/data` configuration were changed.
+
+**Deployment:** Back up your current archive first. Upload the *contents* of this ZIP to the root of the existing GitHub repository (not the enclosing folder), replace matching files, and commit. Railway should deploy the updated commit if GitHub automatic deployment is enabled. Otherwise use Railway's deploy-latest-commit workflow. Keep the attached volume and environment variables intact.
+
+**Browser refresh:** If the old header persists after deployment, use Ctrl+Shift+R to bypass cached assets.
+
+---
+
 # MANSON ARCHIVE — Industrial Gothic — Three-Column Redesign (v2)
 
 A full-stack, independent catalogue for Marilyn Manson live audio and video recordings. **No recordings are hosted, streamed, or made downloadable.**
