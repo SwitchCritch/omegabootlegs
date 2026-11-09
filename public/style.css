@@ -89,3 +89,68 @@ body{background:#09090b;color:#e9e8ed;font-family:'DM Sans',Arial,sans-serif}
     overflow: visible;
   }
 }
+
+
+/* V6 — user-provided Gothic emblem: larger and truly centred above navigation. */
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  min-height: 194px;
+  height: auto;
+  padding: 10px 30px;
+  gap: 14px;
+}
+.site-header:after { z-index: 0; }
+.site-header > * { position: relative; z-index: 1; }
+.site-header .brand-button {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.site-header .omega-logo {
+  display: block;
+  width: clamp(250px, 27vw, 345px);
+  max-height: 174px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+.site-header .header-separator { display: none; }
+.site-header .header-tagline {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.7;
+}
+.site-header .header-actions {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  margin-left: 0;
+}
+@media (max-width: 1000px) {
+  .site-header { min-height: 170px; padding: 10px 18px; }
+  .site-header .omega-logo { width: clamp(220px, 32vw, 300px); max-height: 150px; }
+}
+@media (max-width: 670px) {
+  .site-header {
+    min-height: 0;
+    padding: 12px 14px 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-header .brand-button { align-self: center; }
+  .site-header .omega-logo { width: min(240px, 68vw); max-height: 155px; }
+  .site-header .header-tagline { display: none; }
+  .site-header .header-actions { align-self: center; margin: 0; }
+}

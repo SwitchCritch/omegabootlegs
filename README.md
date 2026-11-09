@@ -1,3 +1,18 @@
+# Omega Bootlegs — V6 Gothic logo update
+
+This version replaces the header logo with the supplied red-and-cream Gothic Omega Bootlegs emblem and displays it larger and horizontally centred above the navigation. On smaller screens the logo remains centred, with the admin controls underneath it. The website's existing functionality, including V5 sticky Recording Details, is preserved.
+
+## Updating your existing GitHub + Railway site
+
+1. Back up your existing collection using the archive's Complete ZIP Backup tool.
+2. Unzip this download and upload **the files inside**, preserving the `public/` folder, into your existing GitHub repository. Replace matching files and commit to the connected branch.
+3. Let Railway deploy the new commit (or deploy the latest commit manually).
+4. Visit the site and press Ctrl+Shift+R if the old image remains cached.
+
+**Do not remove or recreate your Railway `/data` volume or change the existing environment variables.** This release does not modify the server, database schema, recording entries, or screenshot storage.
+
+---
+
 # Omega Bootlegs logo update (V3)
 
 This package is the complete GitHub-ready website, based on the Industrial Gothic V2 release. The site header now displays the supplied transparent **Omega Bootlegs** logo in `public/omega-bootlegs-logo.png`, with responsive sizing for desktop and mobile. No API routes, data formats, database storage, or `/data` configuration were changed.
